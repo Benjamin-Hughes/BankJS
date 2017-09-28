@@ -5,6 +5,7 @@ var myAccount;
 
   beforeEach(function() {
     myAccount = new Account('Ben');
+    myAccount.balance = 0;
   });
 
   it('Has an owner', function() {
@@ -23,8 +24,7 @@ var myAccount;
   });
 
   it('Stores a history of transactions', function() {
-    // myAccount.addFunds(100);
-    // expect(myAccount.transactions).toBeGreaterThan(0);
-    pending('Awaiting transaction object implimentation');
+    myAccount.addFunds(100);
+    expect(myAccount.transactions.length).toBeGreaterThan(0);
   });
 });

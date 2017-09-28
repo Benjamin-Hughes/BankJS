@@ -1,6 +1,7 @@
 function Account(name) {
   this.name = name;
   this.balance = 0;
+  this.transactions = [];
 }
 
 Account.prototype = {
@@ -9,6 +10,8 @@ Account.prototype = {
   },
   addFunds: function(amount) {
     this.balance += amount;
+    var transaction = new Transaction(Date.now());
+    this.transactions.push(transaction);
   },
   withdrawFunds: function(amount) {
     this.balance -= amount;
