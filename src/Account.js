@@ -13,5 +13,5 @@ Account.prototype = {
   withdrawFunds: function(amount) {
     this.balance -= amount;
   },
-  
+
 };

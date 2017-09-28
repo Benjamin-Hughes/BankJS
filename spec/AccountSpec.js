@@ -21,4 +21,10 @@ var myAccount;
     myAccount.withdrawFunds(50);
     expect(myAccount.balance).toEqual(50);
   });
+
+  it('Stores a history of transactions', function() {
+    // myAccount.addFunds(100);
+    // expect(myAccount.transactions).toBeGreaterThan(0);
+    pending('Awaiting transaction object implimentation');
+  });
 });
