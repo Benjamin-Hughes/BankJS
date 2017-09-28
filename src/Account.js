@@ -10,5 +10,8 @@ Account.prototype = {
   addFunds: function(amount) {
     this.balance += amount;
   },
-
+  withdrawFunds: function(amount) {
+    this.balance -= amount;
+  },
+  
 };

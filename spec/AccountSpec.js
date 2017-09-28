@@ -15,4 +15,10 @@ var myAccount;
     myAccount.addFunds(100);
     expect(myAccount.balance).toEqual(100);
   });
+
+  it('Allows the user to withdraw money', function() {
+    myAccount.addFunds(100);
+    myAccount.withdrawFunds(50);
+    expect(myAccount.balance).toEqual(50);
+  });
 });
