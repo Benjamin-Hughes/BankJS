@@ -10,11 +10,16 @@ Account.prototype = {
   },
   addFunds: function(amount) {
     this.balance += amount;
-    var transaction = new Transaction(Date.now());
+    var transaction = new Transaction(this.createDate);
+    console.log(transaction);
     this.transactions.push(transaction);
   },
   withdrawFunds: function(amount) {
     this.balance -= amount;
+  },
+  createDate: function() {
+    var rawDate = new Date();
+    var date = rawDate.toUTCString();
   },
 
 };
