@@ -3,6 +3,15 @@ var Account = (function() {
     this.name = name;
     this.balance = 0;
     this.transactions = [];
+    this.createTransaction = function() {
+      var transaction = new Transaction(createDate());
+      this.transactions.push(transaction);
+    };
+    function createDate() {
+      var rawDate = new Date();
+      var date = rawDate.toUTCString();
+      return date;
+    }
   }
 
   AnAccount.prototype = {
@@ -11,16 +20,11 @@ var Account = (function() {
     },
     addFunds: function(amount) {
       this.balance += amount;
-      var transaction = new Transaction(this.createDate);
-      console.log(transaction);
-      this.transactions.push(transaction);
+      this.createTransaction();
     },
     withdrawFunds: function(amount) {
       this.balance -= amount;
-    },
-    createDate: function() {
-      var rawDate = new Date();
-      var date = rawDate.toUTCString();
+      this.createTransaction();
     },
 
   };
